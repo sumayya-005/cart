@@ -20,21 +20,21 @@ pipeline {
     }
 
     stage('download dependencies') {
-          steps {
-            echo 'download dependencies'
-          }
-    }
-
-    stage('perpare artifacts') {
        steps {
-             echo 'prepare artifacts'
+            echo 'download dependencies'
        }
     }
 
+    stage('perpare artifacts') {
+      steps {
+        echo 'prepare artifacts'
+      }
+    }
+
      stage('publish artifacts') {
-            steps {
-                  echo 'publish artifacts'
-            }
+       steps {
+         echo 'publish artifacts'
+       }
      }
 
   }
