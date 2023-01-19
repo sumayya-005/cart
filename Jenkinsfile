@@ -1,37 +1,40 @@
 pipeline {
 
- agent any {
+  agent  any {
+
   }
 
-   stages {
-     stage('code quality') {
+  stages {
+
+    stage('code quality') {
+      steps {
+        echo 'code quality'
+
+      }
+    }
+
+    stage('style checks') {
+      steps {
+        echo 'style checks'
+      }
+    }
+
+    stage('download dependencies') {
+          steps {
+            echo 'download dependencies'
+          }
+    }
+
+    stage('perpare artifacts') {
        steps {
-         echo 'code quality'
+             echo 'prepare artifacts'
        }
+    }
+
+     stage('publish artifacts') {
+            steps {
+                  echo 'publish artifacts'
+            }
      }
 
-     stage ('style checks') {
-       steps {
-         echo 'style checks'
-      }
-     }
-
-     stage ('download dependencies') {
-        steps {
-          echo 'download dependencies'
-        }
-     }
-
-      stage ('prepare artifact') {
-        steps {
-           echo 'prepare artifact'
-        }
-      }
-
-      stage ('prepare artifact') {
-        steps {
-          echo 'prepare artifact'
-        }
-      }
-   }
-}
+  }
