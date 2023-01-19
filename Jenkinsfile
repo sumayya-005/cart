@@ -1,28 +1,19 @@
 pipeline {
-    agent any {
-
-    }
-
+    agent any
     stages {
-        stage('code quality') {
+        stage('Build') {
             steps {
-                echo 'code quality'
+                //
             }
         }
-        stage('style check') {
+        stage('Test') {
             steps {
-                echo 'style check'
+                //
             }
         }
-        stage('unit test') {
+        stage('Deploy') {
             steps {
-                echo 'unit test'
-            }
-        }
-
-        stage('Download Dependencies') {
-            steps {
-                echo 'download dependencies'
+                //
             }
         }
     }
