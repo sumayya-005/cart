@@ -11,24 +11,28 @@ pipeline {
        }
      }
 
-     stage ('lint checks'){
-       steps{
-         echo 'lint checks'
+     stage ('style checks') {
+       steps {
+         echo 'style checks'
       }
      }
 
-     stage('download dependencies') {
+     stage ('download dependencies') {
         steps {
-            echo 'download dependencies'
+          echo 'download dependencies'
         }
      }
 
-      stage('download dependencies') {
+      stage ('prepare artifact') {
         steps {
-           echo 'download dependencies'
+           echo 'prepare artifact'
+        }
+      }
+
+      stage ('prepare artifact') {
+        steps {
+          echo 'prepare artifact'
         }
       }
    }
-
-
- }
+}
