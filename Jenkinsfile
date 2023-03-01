@@ -6,15 +6,20 @@ pipeline {
                 echo 'build'
             }
         }
-        stage('Test') {
+        stage(' Unit Test') {
             steps {
-                echo 'test'
+                echo ' Unit test'
             }
         }
-        stage('Deploy') {
+        stage(' Download Dependencies') {
             steps {
-                echo 'deploy'
+                echo 'Download Dependencies'
             }
+        }
+        stage('Prepare Artifacts') {
+           steps {
+              echo 'Publish Artifacts'
+           }
         }
     }
 }
