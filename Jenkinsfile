@@ -1,10 +1,16 @@
 pipeline {
     agent any
     stages {
-        stage('Build') {
+        stage('code quality') {
             steps {
-                echo 'build'
+                echo 'code quality'
             }
+        }
+
+        stage('Style Checks') {
+           steps {
+             echo 'Style Checks'
+           }
         }
         stage(' Unit Test') {
             steps {
