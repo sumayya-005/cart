@@ -9,6 +9,8 @@ pipeline {
         }
 
         stage('Style Checks') {
+        when{
+          }
            steps {
              echo 'Style Checks'
            }
@@ -18,7 +20,7 @@ pipeline {
                 echo ' Unit test'
             }
         }
-        
+
         stage(' Download Dependencies') {
             steps {
                 echo 'Download Dependencies'
