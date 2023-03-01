@@ -4,6 +4,7 @@ pipeline {
         stage('code quality') {
             steps {
                 echo 'code quality'
+                sh 'env'
             }
         }
 
@@ -17,12 +18,20 @@ pipeline {
                 echo ' Unit test'
             }
         }
+        
         stage(' Download Dependencies') {
             steps {
                 echo 'Download Dependencies'
             }
         }
-        stage('Prepare Artifacts') {
+
+        stage ('Prepare Artifacts') {
+           steps {
+             echo 'prepare arifacts'
+           }
+        }
+
+        stage('Publish Artifacts') {
            steps {
               echo 'Publish Artifacts'
            }
