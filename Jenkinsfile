@@ -9,8 +9,11 @@ pipeline {
         }
 
         stage('Style Checks') {
-          when{
-             branch 'main'
+          when {
+            anyOf {
+              branch 'main'
+              tag "*"
+            }
           }
            steps {
              echo 'Style Checks'
