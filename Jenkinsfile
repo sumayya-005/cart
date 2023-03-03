@@ -9,31 +9,39 @@ pipeline {
         }
 
         stage('Style Checks') {
-        when{
+          when{
+             branch 'main'
           }
            steps {
              echo 'Style Checks'
            }
         }
+
         stage(' Unit Test') {
-            steps {
-                echo ' Unit test'
-            }
+           when{
+             branch 'main'
+           }
+           steps {
+              echo ' Unit test'
+           }
         }
 
         stage(' Download Dependencies') {
+            when { tag "*"}
             steps {
                 echo 'Download Dependencies'
             }
         }
 
         stage ('Prepare Artifacts') {
+           when { tag "*"}
            steps {
              echo 'prepare artifacts'
            }
         }
 
         stage('Publish Artifacts') {
+           when { tag "*"}
            steps {
               echo 'Publish Artifacts'
            }
