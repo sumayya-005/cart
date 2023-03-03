@@ -21,9 +21,13 @@ pipeline {
         }
 
         stage(' Unit Test') {
-           when{
-             branch 'main'
+           when {
+             anyOf {
+                 branch 'main'
+                 tag "*"
+             }
            }
+
            steps {
               echo ' Unit test'
            }
