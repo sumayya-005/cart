@@ -1,9 +1,10 @@
-FROM    node
-RUN     useradd roboshop
-RUN     mkdir -p /app
-RUN     chown roboshop:roboshop /app
-WORKDIR /app
-ENTRYPOINT ["node","server.js"]
+FROM        node
+RUN         useradd roboshop
+RUN         mkdir -p /app
+RUN         chown roboshop:roboshop /app
+WORKDIR     /app
+ENTRYPOINT  ["node","server.js"]
+EXPOSE      8080
 
 #these steps changes for every component
 COPY        server.js /app/server.js
